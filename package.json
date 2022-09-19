@@ -42,7 +42,7 @@
     "**/*.{js,jsx,ts,tsx}": [
       "yarn eslint --fix",
       "yarn prettier --write",
-      "yarn test --watchAll=false --bail --passWithNoTests --findRelatedTests"
+      "yarn test --bail --passWithNoTests --findRelatedTests"
     ]
   }
 }
