@@ -5,20 +5,22 @@ import { CountdownCircle } from '../components/CountdownCircle'
 
 const Home: NextPage = () => {
   return (
-    <>
-      <nav>
+    <main className="bg-gray-900 h-screen text-white">
+      {/* <nav>
         <Link href="/about">
           <a>About</a>
         </Link>
-      </nav>
-      <CountdownCircle
-        size={300}
-        strokeWidth={25}
-        duration={25}
-        color="red"
-        onComplete={() => {}}
-      />
-    </>
+      </nav> */}
+      <section className="flex justify-center  py-32">
+        <CountdownCircle
+          size={300}
+          strokeWidth={25}
+          duration={25}
+          color="#8605EC"
+          onComplete={() => {}}
+        />
+      </section>
+    </main>
   )
 }
 

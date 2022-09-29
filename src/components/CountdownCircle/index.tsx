@@ -40,36 +40,43 @@ function CountdownCircle({
     circumference - (remainingTime / duration) * circumference
 
   return (
-    <div className="relative">
-      <button onClick={() => setIsPlaying(t => !t)}>pause</button>
-      <svg height={size} width={size} className="absolute">
-        <circle
-          stroke="#d9d9d9"
-          fill="transparent"
-          strokeWidth={strokeWidth}
-          style={{ strokeDashoffset }}
-          r={radius}
-          cx={size / 2}
-          cy={size / 2}
-        />
-      </svg>
+    <div className="h-72">
+      <button
+        className="mb-10 px-10 py-2 rounded-3xl bg-gray-700 "
+        onClick={() => setIsPlaying(t => !t)}
+      >
+        {isPlaying ? 'Pause' : 'Play'}
+      </button>
+      <div className="relative flex justify-center">
+        <svg height={size} width={size} className="absolute">
+          <circle
+            stroke={color}
+            fill="transparent"
+            strokeWidth={strokeWidth}
+            style={{ strokeDashoffset }}
+            r={radius}
+            cx={size / 2}
+            cy={size / 2}
+          />
+        </svg>
 
-      <svg width={size} height={size} className="absolute z-10">
-        <circle
-          stroke={color}
-          fill="transparent"
-          strokeWidth={strokeWidth}
-          strokeDasharray={circumference}
-          style={{ strokeDashoffset }}
-          r={radius}
-          cx={size / 2}
-          cy={size / 2}
-        />
-      </svg>
+        <svg width={size} height={size} className="absolute z-10">
+          <circle
+            stroke={color}
+            fill="transparent"
+            strokeWidth={strokeWidth}
+            strokeDasharray={circumference}
+            style={{ strokeDashoffset }}
+            r={radius}
+            cx={size / 2}
+            cy={size / 2}
+          />
+        </svg>
 
-      <div className="absolute z-20 inline-block font-bold text-6xl left-20 top-28 text-red-700 right-0 bottom-0 m-auto">
-        {minutes < 10 ? `0${minutes}` : minutes}:
-        {seconds < 10 ? `0${seconds}` : seconds}
+        <div className="absolute z-20 inline-block font-bold text-6xl -left-4 top-28 text-white right-0 bottom-0 m-auto">
+          {minutes < 10 ? `0${minutes}` : minutes}:
+          {seconds < 10 ? `0${seconds}` : seconds}
+        </div>
       </div>
     </div>
   )
