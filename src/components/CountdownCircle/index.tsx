@@ -16,16 +16,16 @@ function CountdownCircle({
   duration,
   onComplete,
 }: CountdownCircleProps) {
-  const [remainingTime, setRemainingTime] = useState(duration * 60)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [remainingSeconds, setRemainingSeconds] = useState(remainingTime)
   const { elapsedTime } = useElapsedTime({
     duration: duration * 60,
     isPlaying: isPlaying,
     updateInterval: 1,
   })
 
-  const remainingTimes = Math.ceil(duration * 60 - elapsedTime)
+  const [remainingSeconds, setRemainingSeconds] = useState(
+    duration * 60 - elapsedTime,
+  )
 
   useEffect(() => {
     setRemainingSeconds(t => t - 1)
@@ -37,7 +37,7 @@ function CountdownCircle({
   const radius = (size - strokeWidth) / 2
   const circumference = 2 * Math.PI * radius
   const strokeDashoffset =
-    circumference - (remainingTime / duration) * circumference
+    circumference - (elapsedTime / (duration * 60)) * circumference
 
   return (
     <div className="h-72">
@@ -47,10 +47,10 @@ function CountdownCircle({
       >
         {isPlaying ? 'Pause' : 'Play'}
       </button>
-      <div className="relative flex justify-center">
+      <div className="relative flex justify-center" aria-label="countdown">
         <svg height={size} width={size} className="absolute">
           <circle
-            stroke={color}
+            stroke="gray"
             fill="transparent"
             strokeWidth={strokeWidth}
             style={{ strokeDashoffset }}
@@ -62,6 +62,7 @@ function CountdownCircle({
 
         <svg width={size} height={size} className="absolute z-10">
           <circle
+            data-testid="circle"
             stroke={color}
             fill="transparent"
             strokeWidth={strokeWidth}

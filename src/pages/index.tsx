@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <CountdownCircle
           size={300}
           strokeWidth={25}
-          duration={25}
+          duration={0}
           color="#8605EC"
           onComplete={() => {}}
         />
