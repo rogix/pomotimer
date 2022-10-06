@@ -13,10 +13,10 @@ const Home: NextPage = () => {
       </nav> */}
       <section className="flex justify-center  py-32">
         <CountdownCircle
-          size={300}
-          strokeWidth={25}
-          duration={0}
-          color="#8605EC"
+          size={400}
+          strokeWidth={35}
+          duration={0.1}
+          color="#560B90"
           onComplete={() => {}}
         />
       </section>
