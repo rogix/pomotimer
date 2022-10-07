@@ -6,11 +6,11 @@ import { CountdownCircle } from '../components/CountdownCircle'
 const Home: NextPage = () => {
   return (
     <main className="bg-gray-900 h-screen text-white">
-      {/* <nav>
+      <nav>
         <Link href="/about">
           <a>About</a>
         </Link>
-      </nav> */}
+      </nav>
       <section className="flex justify-center  py-32">
         <CountdownCircle
           size={400}
