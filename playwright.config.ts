@@ -53,6 +53,7 @@ const config: PlaywrightTestConfig = {
     // contextOptions: {
     //   ignoreHTTPSErrors: true,
     // },
+    colorScheme: 'dark',
   },
 
   /* Configure projects for major browsers */
