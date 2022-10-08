@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 import type { NextPage } from 'next'
 import { CountdownCircle } from '../components/CountdownCircle'
 import { Sidenav } from '@/components/SideNav'
@@ -12,7 +10,7 @@ const Home: NextPage = () => {
         <CountdownCircle
           size={400}
           strokeWidth={35}
-          duration={0.1}
+          duration={25}
           color="#560B90"
           onComplete={() => {}}
         />

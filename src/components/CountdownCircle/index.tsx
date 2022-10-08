@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useElapsedTime } from 'use-elapsed-time'
+import {
+  PlayIcon,
+  PauseIcon,
+  TrackNextIcon,
+  ResetIcon,
+} from '@radix-ui/react-icons'
 
 interface CountdownCircleProps {
   size: number
@@ -42,22 +48,6 @@ function CountdownCircle({
 
   return (
     <div className="h-72">
-      <button
-        className="mb-10 px-10 py-2 rounded-3xl bg-gray-700"
-        onClick={() => setIsPlaying(t => !t)}
-        disabled={remainingSeconds === 0}
-      >
-        {isPlaying ? 'Pause' : 'Play'}
-      </button>
-      <button
-        className="mb-10 px-10 py-2 rounded-3xl bg-gray-700"
-        onClick={() => {
-          reset()
-          setIsPlaying(false)
-        }}
-      >
-        Reset
-      </button>
       <div
         className="relative flex justify-center w-]400px] h-[400px]"
         aria-label="countdown"
@@ -94,6 +84,42 @@ function CountdownCircle({
           {minutes < 10 ? `0${minutes}` : minutes}:
           {seconds < 10 ? `0${seconds}` : seconds}
         </div>
+      </div>
+      <div className="flex justify-center mt-8 space-x-20">
+        <button
+          className="mb-10 p-5 rounded-full hover:bg-[#0b02135b] hover:text-white cursor-pointer"
+          aria-label="reset"
+          title="Reset"
+          onClick={() => {
+            reset()
+            setIsPlaying(false)
+          }}
+        >
+          <ResetIcon width={20} height={20} />
+        </button>
+        <button
+          className="mb-10 p-5 rounded-full hover:bg-[#0b02135b] hover:text-white cursor-pointer"
+          aria-label={isPlaying ? 'pause' : 'play'}
+          onClick={() => setIsPlaying(t => !t)}
+          disabled={remainingSeconds === 0}
+        >
+          {isPlaying ? (
+            <PauseIcon width={20} height={20} />
+          ) : (
+            <PlayIcon width={20} height={20} />
+          )}
+        </button>
+        <button
+          className="mb-10 p-5 rounded-full hover:bg-[#0b02135b] hover:text-white cursor-pointer"
+          aria-label="skip"
+          onClick={() => {
+            reset()
+            setIsPlaying(false)
+          }}
+          disabled={remainingSeconds === 0}
+        >
+          <TrackNextIcon width={20} height={20} />
+        </button>
       </div>
     </div>
   )
