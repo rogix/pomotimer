@@ -47,7 +47,12 @@ function CountdownCircle({
     circumference - (elapsedTime / (duration * 60)) * circumference
 
   return (
-    <div className="h-72">
+    <div>
+      <div className="flex justify-between items-center pb-20">
+        <button>Pomodoro</button>
+        <button>Short Break</button>
+        <button>Long Break</button>
+      </div>
       <div
         className="relative flex justify-center w-]400px] h-[400px]"
         aria-label="countdown"

@@ -4,7 +4,7 @@ import { Sidenav } from '@/components/SideNav'
 
 const Home: NextPage = () => {
   return (
-    <main className="bg-gray-900 h-screen text-white">
+    <main className="bg-gray-900 min-h-screen text-white">
       <Sidenav />
       <section className="flex justify-center  py-32">
         <CountdownCircle

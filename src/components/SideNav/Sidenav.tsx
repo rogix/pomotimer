@@ -7,7 +7,7 @@ function Sidenav() {
 
   return (
     <>
-      <nav className="flex flex-col items-center absolute bg-[#0b141d] h-screen w-52">
+      <nav className="flex flex-col items-center  bg-[#0b141d] h-screen w-52 fixed">
         <header className="py-10">Pomotimer</header>
         <ul className="w-full flex flex-col items-end">
           <li className="flex justify-end flex-col items-end group">
