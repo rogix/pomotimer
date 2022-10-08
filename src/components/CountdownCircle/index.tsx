@@ -59,7 +59,7 @@ function CountdownCircle({
         Reset
       </button>
       <div
-        className={`relative flex justify-center w-[${size}px] h-[${size}px]`}
+        className="relative flex justify-center w-]400px] h-[400px]"
         aria-label="countdown"
         role="progressbar"
       >
