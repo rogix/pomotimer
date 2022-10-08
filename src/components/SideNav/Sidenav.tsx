@@ -1,3 +1,4 @@
+import { TimerIcon, PieChartIcon, GearIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -21,12 +22,15 @@ function Sidenav() {
               <div
                 className={
                   router.asPath === '/'
-                    ? 'w-44 h-24  rounded-l-full bg-gray-900 flex items-center'
-                    : 'w-44 h-24  rounded-l-full bg-[#0b141d] hover:bg-gray-900 flex items-center group-hover:bg-gray-900'
+                    ? 'w-48 h-24  rounded-l-full bg-gray-900 flex items-center'
+                    : 'w-48 h-24  rounded-l-full bg-[#0b141d] hover:bg-gray-900 flex items-center group-hover:bg-gray-900'
                 }
               >
                 <Link href="/">
-                  <a className="text-2xl pl-5">Timer</a>
+                  <a className="text-2xl pl-5 flex items-center">
+                    <TimerIcon width={20} height={20} />
+                    <span className="pl-4">Timer</span>
+                  </a>
                 </Link>
               </div>
             </div>
@@ -45,12 +49,15 @@ function Sidenav() {
               <div
                 className={
                   router.asPath === '/stats'
-                    ? 'w-44 h-24  rounded-l-full bg-gray-900 flex items-center'
-                    : 'w-44 h-24  rounded-l-full bg-[#0b141d] hover:bg-gray-900 flex items-center group-hover:bg-gray-900'
+                    ? 'w-48 h-24  rounded-l-full bg-gray-900 flex items-center'
+                    : 'w-48 h-24  rounded-l-full bg-[#0b141d] hover:bg-gray-900 flex items-center group-hover:bg-gray-900'
                 }
               >
                 <Link href="/stats">
-                  <a className="text-2xl pl-5">Stats</a>
+                  <a className="text-2xl pl-5 flex items-center">
+                    <PieChartIcon width={20} height={20} />
+                    <span className="pl-4">Stats</span>
+                  </a>
                 </Link>
               </div>
             </div>
@@ -69,12 +76,15 @@ function Sidenav() {
               <div
                 className={
                   router.asPath === '/settings'
-                    ? 'w-44 h-24  rounded-l-full bg-gray-900 flex items-center'
-                    : 'w-44 h-24  rounded-l-full bg-[#0b141d] hover:bg-gray-900 flex items-center group-hover:bg-gray-900'
+                    ? 'w-48 h-24  rounded-l-full bg-gray-900 flex items-center'
+                    : 'w-48 h-24  rounded-l-full bg-[#0b141d] hover:bg-gray-900 flex items-center group-hover:bg-gray-900'
                 }
               >
                 <Link href="/settings">
-                  <a className="text-2xl pl-5">Settings</a>
+                  <a className="text-2xl pl-5 flex items-center">
+                    <GearIcon width={20} height={20} />
+                    <span className="pl-4">Settings</span>
+                  </a>
                 </Link>
               </div>
             </div>
